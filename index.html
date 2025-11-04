@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Meditace v Alpách</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f0f8ff;
+    }
+    #player {
+      display: none;
+      margin-top: 20px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meditace v Alpách</h1>
+  <p>Zadejte heslo pro přehrání meditace:</p>
+  <input type="password" id="passwordInput" placeholder="Heslo">
+  <button onclick="checkPassword()">Odeslat</button>
+
+  <div id="player">
+    <audio controls>
+      <source src="Meditace v Alpach.mp3" type="audio/mpeg">
+      Váš prohlížeč nepodporuje přehrávání audia.
+    </audio>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      if(password === "XmasAlps2025") {
+        document.getElementById("player").style.display = "block";
+      } else {
+        alert("Špatné heslo, zkuste to znovu.");
+      }
+    }
+  </script>
+</body>
+</html>
